@@ -1,0 +1,83 @@
+{
+	"$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+	"type": "AdaptiveCard",
+	"version": "1.0",
+	"body": [
+		{
+			"type": "Container",
+			"items": [
+				{
+					"type": "TextBlock",
+					"text": "%BotName%",
+					"weight": "bolder",
+					"size": "medium"
+				},
+				{
+					"type": "ColumnSet",
+					"columns": [
+						{
+							"type": "Column",
+							"width": "auto",
+							"items": [
+								{
+									"type": "Image",
+									"url": "%IconUrl",
+									"size": "small",
+									"style": "person"
+								}
+							]
+						},
+						{
+							"type": "Column",
+							"width": "stretch",
+							"items": [
+								{
+									"type": "TextBlock",
+									"text": "%CompanyName%",
+									"weight": "bolder",
+									"wrap": true
+								},
+								{
+									"type": "TextBlock",
+									"spacing": "none",
+									"text": "Version %BotVersion%",
+									"isSubtle": true,
+									"wrap": true
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "Container",
+			"items": [
+				{
+					"type": "TextBlock",
+					"text": "We hope you enjoy playing with this prototype. Now, please be a sport and let us know what you think",
+					"wrap": true
+				},
+                {
+                                "type": "Input.Text",
+                                "id": "comments",
+                                "placeholder": "Here's my feedback...",
+                                "isMultiline": "true",
+                                "maxLength": "120"
+                }
+			]
+		}
+	],
+	"actions": [
+		{
+			"type": "Action.Submit",
+			"title": "Share My Feedback",
+			"data": { "choice": "Submit.Feedback"}
+		},
+		{
+			"type": "Action.OpenUrl",
+			"title": "View User Guide",
+			"url": "%UserGuideUrl%"
+		}  
+	]
+}
